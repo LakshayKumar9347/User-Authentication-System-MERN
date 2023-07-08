@@ -1,0 +1,12 @@
+:::Creating User-Authentication System ===> Documenting:::
+
+->Creating UI PART
+: Create a folder name with project and create our react app using npx create-react-app user-auth
+: Creating OUr component login and signup --> so we have created three component login ,signup and dashboard
+:after making your properly working frontend with react we will create the backend
+
+->Creating LOGIN and SIGNUP using MERN
+:we have setup our index.js imported all requir modules like dotenv,cors,express,mongoose etc
+:after that we are creating a routes for that /login ,/signup
+:integerating our backend into frontend
+:make things happen that your express server listen all the request POST that are sending on the /signup endpoint so that we can capture the request body parameter and further take some next steps like creteing user , checking for password to check loginn protocol etc.
