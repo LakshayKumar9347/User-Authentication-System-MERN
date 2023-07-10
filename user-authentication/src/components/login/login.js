@@ -31,7 +31,7 @@ export default function Login({setLoginUser}) {
           throw new Error("error")
         }
       }).then((data)=>{
-        console.log("this is returning response data",data);
+        // console.log("This is fetch Then response data " , data);
         setLoginUser({data})
       }).catch(err=>{
         console.log(err);
