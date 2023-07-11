@@ -46,15 +46,15 @@ app.post('/login', async(req, res) => {
   if(LoggedInuser){
     if (LoggedInuser.password === password) {
       // res.send({mgs:"login success"})
-      res.json({user: LoggedInuser})
+      res.json({msg:"Login Successfull",user: LoggedInuser})
     }
     else{
       
-      res.json({user:{msg:"password galat hai"}})
+      res.json({msg:"Login Unsuccessful"})
     }
   }
   else{
-    res.send({user:{_id:null,msg:"User Not Found Please Register"}})
+    res.json({msg:"User Not Registered"})
   }
   
 });

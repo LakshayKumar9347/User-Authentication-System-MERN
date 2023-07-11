@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-export default function Login({setLoginUser}) {
+export default function Login(props) {
   const navigate = useNavigate()
 
   const [user, setUser] = useState({
@@ -23,17 +23,19 @@ export default function Login({setLoginUser}) {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(user),
-      }).then((response)=>{
-        if(response.ok){
+      }).then((response) => {
+        if (response.ok) {
           return response.json()
         }
-        else{
+        else {
           throw new Error("error")
         }
-      }).then((data)=>{
-        // console.log("This is fetch Then response data " , data);
-        setLoginUser({data})
-      }).catch(err=>{
+      }).then((data) => {
+        console.log("This is fetch Then response data ", data);
+        alert(data.msg)
+        console.log(data.user._id);
+        props.setLoginUser(data.data)
+      }).catch(err => {
         console.log(err);
       })
     }

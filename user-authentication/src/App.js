@@ -8,17 +8,16 @@ import { Route, Routes } from 'react-router-dom'
 
 function App() {
   const [user, setLoginUser] = useState({})
-  console.log("This is from UseState ==> ", user);
-  // console.log(user.data.user._id);
+  console.log("This is OUR state", user)
 
-
+// .data.user._id
   return (
 
     <>
       <Routes>
-        <Route path='/' element={user.data.user._id ? <Dashboard /> : <Login />} />
-        <Route path='/login' element={<Login setLoginUser={setLoginUser} />} />
-        <Route path='/signup' element={<Signup />} />
+        <Route exact path='/' element={user && user._id ? <Dashboard /> : <Login />} />
+        <Route exact path='/login' element={<Login setLoginUser={setLoginUser} />} />
+        <Route exact path='/signup' element={<Signup />} />
       </Routes>
     </>
   );
